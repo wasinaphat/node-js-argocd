@@ -14,7 +14,7 @@ spec:
         app: nodeserver
     spec:
       containers:
-      - image: gcr.io/big-data-313001/nodeserver
+      - image: gcr.io/big-data-313001/static-site:latest
         name: nodeserver
         ports:
         - containerPort: 8080
