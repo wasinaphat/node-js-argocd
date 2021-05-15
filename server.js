@@ -12,7 +12,5 @@ app.get('/', (req, res) => {
   res.send('Hello World');
 });
 //te123
-app.listen(PORT,()=>{
-
-});
+app.listen(PORT,HOST);
 console.log(`Running on http://${HOST}:${PORT}`);
