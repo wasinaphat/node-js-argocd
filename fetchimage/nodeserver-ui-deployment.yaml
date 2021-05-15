@@ -4,7 +4,7 @@ metadata:
   name: nodeserver
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
+  revisionHistoryLimit: 1
   selector:
     matchLabels:
       app: nodeserver
