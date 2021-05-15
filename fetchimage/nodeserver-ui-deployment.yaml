@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeserver
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: nodeserver
+  template:
+    metadata:
+      labels:
+        app: nodeserver
+    spec:
+      containers:
+      - image: https://hub.docker.com/repository/docker/wasinapl/nodeserver
+        name: nodeserver
+        ports:
+        - containerPort: 8080
