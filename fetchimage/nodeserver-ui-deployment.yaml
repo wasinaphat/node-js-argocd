@@ -14,7 +14,7 @@ spec:
         app: nodeserver
     spec:
       containers:
-      - image: https://registry.hub.docker.com/repository/docker/wasinapl/nodeserver
+      - image: gcr.io/big-data-313001/nodeserver/GITHUB_SHA
         name: nodeserver
         ports:
         - containerPort: 8080
