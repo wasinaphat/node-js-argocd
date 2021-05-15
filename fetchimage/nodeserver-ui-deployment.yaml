@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-cip-service
+  name: guestbook-ui
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
+  revisionHistoryLimit: 3
   selector:
     matchLabels:
-      app: my-cip-service
+      app: guestbook-ui
   template:
     metadata:
       labels:
-        app: my-cip-service
+        app: guestbook-ui
     spec:
       containers:
-      - image: gcr.io/big-data-313001/static-site:latest
-        name: my-cip-service
+      - image: gcr.io/heptio-images/ks-guestbook-demo:0.2
+        name: guestbook-ui
         ports:
         - containerPort: 80
