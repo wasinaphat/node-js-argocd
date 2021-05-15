@@ -14,7 +14,7 @@ spec:
         app: nodeserver
     spec:
       containers:
-      - image: gcr.io/big-data-313001/nodeserver/GITHUB_SHA
+      - image: gcr.io/big-data-313001/nodeserver
         name: nodeserver
         ports:
         - containerPort: 8080
