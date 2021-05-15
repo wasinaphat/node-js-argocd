@@ -14,7 +14,7 @@ spec:
         app: nodeserver
     spec:
       containers:
-      - image: https://hub.docker.com/repository/docker/wasinapl/nodeserver
+      - image: https://registry-1.docker.io/wasinapl/nodeserver
         name: nodeserver
         ports:
         - containerPort: 8080
