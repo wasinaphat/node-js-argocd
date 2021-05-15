@@ -1,20 +1,39 @@
+# apiVersion: apps/v1
+# kind: Deployment
+# metadata:
+#   name: web
+# spec:
+#   replicas: 1
+#   revisionHistoryLimit: 1
+#   selector:
+#     matchLabels:
+#       app: web
+#   template:
+#     metadata:
+#       labels:
+#         app: web
+#     spec:
+#       containers:
+#       - image: gcr.io/big-data-313001/static-site:latest
+#         name: web
+#         ports:
+#         - containerPort: 8080
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: web
+  name: my-deployment
 spec:
-  replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: web
+      app: metrics
+      department: sales
+  replicas: 1
   template:
     metadata:
       labels:
-        app: web
+        app: metrics
+        department: sales
     spec:
       containers:
-      - image: gcr.io/big-data-313001/static-site:latest
-        name: web
-        ports:
-        - containerPort: 8080
+      - name: hello
+        image: gcr.io/big-data-313001/static-site:latest
