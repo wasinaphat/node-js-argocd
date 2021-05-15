@@ -14,7 +14,7 @@ spec:
         app: nodeserver
     spec:
       containers:
-      - image: https://registry.hub.docker.com/repository/docker/wasinapl/nodeserver
+      - image: docker.pkg.github.com/wasinaphat/node-js-argocd/image:latest
         name: nodeserver
         ports:
         - containerPort: 8080
