@@ -1,21 +1,27 @@
+# This file configures the hello-world app which serves public web traffic.
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: guestbook-ui
+  name: helloworld-gke
 spec:
   replicas: 1
-  revisionHistoryLimit: 1
   selector:
     matchLabels:
-      app: guestbook-ui
+      app: hello
   template:
     metadata:
       labels:
-        app: guestbook-ui
+        app: hello
     spec:
       containers:
-      - image: gcr.io/big-data-313001/static-site:latest
-        name: guestbook-ui
+      - name: hello-app
+        # Replace $GCLOUD_PROJECT with your project ID
+        image: gcr.io/big-data-313001/static-site:latest
+        # This app listens on port 8080 for web traffic by default.
         ports:
         - containerPort: 8080
-          protocol: TCP
+        env:
+          - name: PORT
+            value: "8080"
+
+          
